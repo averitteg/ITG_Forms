@@ -76,6 +76,14 @@ Module ModMain
     End Function
 
     Public Sub g_SendEmail(ByVal ToAddress As String, ByVal Subject As String, ByVal Message As String)
+        g_SendEmail(ToAddress, Subject, Message, "", "")
+    End Sub
+
+    Public Sub g_SendEmail(ByVal ToAddress As String, ByVal Subject As String, ByVal Message As String, CC_Address As String)
+        g_SendEmail(ToAddress, Subject, Message, CC_Address, "")
+    End Sub
+
+    Public Sub g_SendEmail(ByVal ToAddress As String, ByVal Subject As String, ByVal Message As String, ByVal CC_Address As String, ByVal BCC_Address As String)
         Debug.WriteLine("Email Module -- To: " & ToAddress & "  Subject: " & Subject & "   Message: " & Message)
         If ConfigurationManager.AppSettings("EmailEnabled") = True Then
             Dim Mail As New System.Net.Mail.MailMessage
@@ -86,12 +94,19 @@ Module ModMain
                 For Each strEmailAddress As String In Split(ToAddress, ";")
                     Mail.To.Add(strEmailAddress)
                 Next
+                If CC_Address <> "" Then
+                    Mail.CC.Add(CC_Address)
+                End If
+
+                If BCC_Address <> "" Then
+                    Mail.Bcc.Add(BCC_Address)
+                End If
 
                 Mail.From = New System.Net.Mail.MailAddress(g_EmailFromAddress)
                 Mail.Body = Message
 
                 Dim strHTMLCheck As String = UCase(Message)
-                Mail.IsBodyHtml = strHTMLCheck.ToUpper.Contains("<BODY") Or strHTMLCheck.ToUpper.Contains("<TABLE") Or strHTMLCheck.ToUpper.Contains("<DIV") Or strHTMLCheck.ToUpper.Contains("<BR") Or strHTMLCheck.ToUpper.Contains("<P")
+                Mail.IsBodyHtml = strHTMLCheck.ToUpper.Contains("<BODY") Or strHTMLCheck.ToUpper.Contains("<TABLE") Or strHTMLCheck.ToUpper.Contains("<DIV") Or strHTMLCheck.ToUpper.Contains("<BR") Or strHTMLCheck.ToUpper.Contains("<P") Or strHTMLCheck.ToUpper.Contains("<SPAN")
                 Dim SMTPServer As New System.Net.Mail.SmtpClient()
 
                 SMTPServer.Timeout = 100000
@@ -133,24 +148,53 @@ Module ModMain
             'PrincipalSearchResult<Principal> groups = user.GetAuthorizationGroups();
             Dim delimiter As String = ""
             Dim userGroups As PrincipalSearchResult(Of Principal) = curUserPrincipal.GetAuthorizationGroups
-            For Each p In userGroups
-                strGroups &= delimiter & p.Name.ToString
-                delimiter = "<br />"
-            Next
+
+            Dim iterGroup = userGroups.GetEnumerator
+
+            Using iterGroup
+                While (iterGroup.MoveNext)
+                    Try
+                        Dim p As Principal = iterGroup.Current
+                        strGroups &= delimiter & p.Name.ToString.ToUpper
+                        delimiter = ","
+                        p.Dispose()
+                    Catch ex As Exception
+                        ''Do nothing
+                        Continue While
+                    End Try
+                End While
+            End Using
 
         Else
-
+            ''User Not Found
         End If
+        Return strGroups
+    End Function
+
+    Public Function getUserGroupsAsString_old()
+        Dim strGroups As String = ""
+        ''PrincipalContext yourDomain = new PrincipalContext(ContextType.Domain);
+        Dim curDomain As PrincipalContext = New PrincipalContext(ContextType.Domain)
+        Dim curUser As String = HttpContext.Current.Request.LogonUserIdentity.Name.ToString.Replace("D700\", "").Replace("ITGBRANDS\", "")
+
+        ''Find your User
+        ''UserPrincipal user = UserPrincipal.FindByIdentity(yourDomain, userName);
+        Dim curUserPrincipal As UserPrincipal = UserPrincipal.FindByIdentity(curDomain, curUser)
+
+        If Not IsNothing(curUserPrincipal) Then
+            ''USER FOUND
+            'PrincipalSearchResult<Principal> groups = user.GetAuthorizationGroups();
+            Dim delimiter As String = ""
+            Dim userGroups As PrincipalSearchResult(Of Principal) = curUserPrincipal.GetAuthorizationGroups
 
 
-
-
-
-
-
-        For Each row In HttpContext.Current.Request.LogonUserIdentity.Groups
-            strGroups &= row.ToString
-        Next
+            For Each p In userGroups
+                strGroups &= delimiter & p.Name.ToString
+                delimiter = ","
+            Next
+        Else
+            ''User Not Found
+        End If
         Return strGroups
     End Function
 
@@ -162,15 +206,16 @@ Module ModMain
         ''''''''''VERIFY USER''''''''''''
         If IsNothing(System.Web.HttpContext.Current.Session("User_Name")) Then
             User = HttpContext.Current.Request.LogonUserIdentity.Name.ToString.Replace("ITGBRANDS\", "").Replace("D700\", "")
-            strSql = "Select user_id, NAME, CAN_EDIT, IS_ADMIN from vw_sys_users where user_id = '" & User & "'"
+            strSql = "Select SAM_ACCOUNT_NAME AS 'USER_ID', NAME, IS_ADMIN, EMAIL from vw_sys_users where SAM_ACCOUNT_NAME = '" & User & "'"
             tblResults = g_IO_Execute_SQL(strSql, False)
 
             If tblResults.Rows.Count > 0 Then
                 System.Web.HttpContext.Current.Session("USER_NAME") = tblResults.Rows(0)("NAME")
                 System.Web.HttpContext.Current.Session("USER_ID") = tblResults.Rows(0)("USER_ID")
-                System.Web.HttpContext.Current.Session("CAN_EDIT") = tblResults.Rows(0)("CAN_EDIT")
+                System.Web.HttpContext.Current.Session("USER_EMAIL") = tblResults.Rows(0)("EMAIL")
                 System.Web.HttpContext.Current.Session("IS_ADMIN") = tblResults.Rows(0)("IS_ADMIN")
 
+                System.Web.HttpContext.Current.Session("MEMBER_OF") = getUserGroupsAsString()
 
                 Return True
             Else
@@ -305,6 +350,5 @@ Module ModMain
         Dim strSQL As String = "udp_LogActivity @USERID = '" & userID.Replace("'", "''") & "', @PAGE = '" & PAGE.Replace("'", "''") & "', @ACTION = '" & Action.Replace("'", "''") & "'"
         g_IO_Execute_SQL(strSQL, False)
     End Sub
-
 
 End Module
