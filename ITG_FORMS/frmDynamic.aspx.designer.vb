@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmBasic
+Partial Public Class frmDynamic
     
     '''<summary>
     '''litHeader control.
@@ -104,22 +104,13 @@ Partial Public Class frmBasic
     Protected WithEvents litSubject As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''litMessageBody control.
+    '''pnlFormDetails control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents litMessageBody As Global.System.Web.UI.WebControls.Literal
-    
-    '''<summary>
-    '''txtComments control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtComments As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents pnlFormDetails As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
     '''btnSubmit control.
@@ -129,6 +120,15 @@ Partial Public Class frmBasic
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnCancel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancel As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''txtCCValue control.
@@ -183,4 +183,13 @@ Partial Public Class frmBasic
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnAddBCC As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''lblMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 End Class

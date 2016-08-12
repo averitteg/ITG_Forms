@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Default.Master" CodeBehind="frmBasic.aspx.vb" Inherits="ITG_FORMS.frmBasic" validateRequest="false" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style>
         .portalLink {
@@ -58,35 +59,43 @@
         <hr />
 
         <asp:Panel ID="pnlFormHeader" runat="server">
-            <table style="width: 70%;">
-                <tr><td style="width: 80px;"><span style="font-weight: bold;">To:</span></td><td><asp:TextBox ID="txtTo" runat="server" Width="700px" TextMode="MultiLine" /> </td></tr>
+            <table style="width: 100%;">
+                
+                <tr><td style="width: 80px;"><span style="font-weight: bold;">To:</span></td><td><asp:Literal ID="litTO" runat="server"></asp:Literal></td></tr>
                 <tr><td><span style="font-weight: bold;"> From:</span></td><td><asp:Literal ID="litFrom" runat="server"></asp:Literal> </td></tr>
-                <tr><td><span style="font-weight: bold;"> CC:</span></td><td><asp:TextBox ID="txtCC" runat="server" Width="700px" TextMode="MultiLine" /> </td></tr>
-                <tr><td><span style="font-weight: bold;"> BCC:</span></td><td> <asp:TextBox ID="txtBCC" runat="server" Width="700px" TextMode="MultiLine" /><asp:ImageButton ID="imgAddBCC" Height="16" Width="16" ImageUrl="~/images/round_add_red.PNG" runat="server" /> </td></tr>
+                <tr><td style="width: 80px;"><span style="font-weight: bold;">CC:</span></td><td><asp:Literal ID="litCC" runat="server"></asp:Literal></td></tr>
+                <tr><td><span style="font-weight: bold;"> Add CC:</span></td><td><asp:TextBox ID="txtCC" runat="server" Width="90%" TextMode="MultiLine" /><asp:ImageButton ID="imgAddCC" Height="24" Width="24" ImageUrl="~/images/round_add_red.PNG" runat="server" /> </td></tr>
+                <tr><td><span style="font-weight: bold;"> Add BCC:</span></td><td> <asp:TextBox ID="txtBCC" runat="server" Width="90%" TextMode="MultiLine" /><asp:ImageButton ID="imgAddBCC" Height="24" Width="24" ImageUrl="~/images/round_add_red.PNG" runat="server" /> </td></tr>
                 <tr><td><span style="font-weight: bold;"> Subject:</span></td><td><asp:Literal ID="litSubject" runat="server"></asp:Literal> </td></tr>
             </table>
             <br />
             <asp:Literal ID="litMessageBody" runat="server"></asp:Literal>
             <br />
             <br />
-            <asp:TextBox ID="txtComments" runat="server" TextMode="MultiLine" Height="50px" Width="400px"></asp:TextBox>
+            <asp:TextBox ID="txtComments" runat="server" TextMode="MultiLine" Height="50px" Width="80%"></asp:TextBox>
             <br />
             <br />
             <table>
                 <tr><td>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btnSubmit" /></td></tr>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btnSubmit" />
+                    <div style="display: block;height: 1px; width: 1px; border:none; overflow: hidden;">
+                        <div>
+                            <asp:TextBox ID="txtCCValue" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtBCCvalue" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    </td></tr>
             </table>
         </asp:Panel>
         
         <asp:Panel ID="pnlAddBCC" runat="server">
-            Current BCC List: <asp:Literal ID="litBCCAdd" runat="server"></asp:Literal>
+            Add Distribution List<br />
+            <span style="font-style: italic; color: #530000; font-size: .8em;">*hold CTRL to select multiple entries...</span><br />
+            <asp:ListBox ID="lstGroupListing" runat="server" Height="200px" SelectionMode="Multiple"></asp:ListBox>
             <br /><br />
-            <table>
-                <tr><td>Add User</td><td></td></tr>
-            </table>
-            <asp:DropDownList ID="ddlUserListing" runat="server"></asp:DropDownList>
-            <br /><br />
-            <asp:ListBox ID="lstUserListing" runat="server" Height="200px" SelectionMode="Multiple"></asp:ListBox>
+            Add Specific Users<br />
+            <span style="font-style: italic; color: #530000; font-size: .8em;">*hold CTRL to select multiple entries...</span><br />
+            <asp:ListBox ID="lstUserListing" runat="server" Height="200px" SelectionMode="Multiple" ValidateRequestMode="Disabled"></asp:ListBox>
             <br /><br />
             <asp:Button ID="btnAddBCC" runat="server" Text="Add BCC" />
         </asp:Panel>

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmBasic
+Partial Public Class frmBasic1ddl
     
     '''<summary>
     '''litHeader control.
@@ -120,6 +120,24 @@ Partial Public Class frmBasic
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtComments As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''litDDLLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents litDDLLabel As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''ddlOptions control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlOptions As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''btnSubmit control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Default.Master" CodeBehind="frmBasic.aspx.vb" Inherits="ITG_FORMS.frmBasic" validateRequest="false" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Default.Master" CodeBehind="frmBasic1ddl.aspx.vb" Inherits="ITG_FORMS.frmBasic1ddl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style>
@@ -60,7 +60,6 @@
 
         <asp:Panel ID="pnlFormHeader" runat="server">
             <table style="width: 100%;">
-                
                 <tr><td style="width: 80px;"><span style="font-weight: bold;">To:</span></td><td><asp:Literal ID="litTO" runat="server"></asp:Literal></td></tr>
                 <tr><td><span style="font-weight: bold;"> From:</span></td><td><asp:Literal ID="litFrom" runat="server"></asp:Literal> </td></tr>
                 <tr><td style="width: 80px;"><span style="font-weight: bold;">CC:</span></td><td><asp:Literal ID="litCC" runat="server"></asp:Literal></td></tr>
@@ -73,6 +72,9 @@
             <br />
             <br />
             <asp:TextBox ID="txtComments" runat="server" TextMode="MultiLine" Height="50px" Width="80%"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Literal ID="litDDLLabel" runat="server"></asp:Literal><asp:DropDownList ID="ddlOptions" runat="server"></asp:DropDownList>
             <br />
             <br />
             <table>

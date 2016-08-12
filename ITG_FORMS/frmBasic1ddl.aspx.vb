@@ -1,4 +1,4 @@
-﻿Public Class frmBasic
+﻿Public Class frmBasic1ddl
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -9,8 +9,11 @@
             Else
                 hidePanels()
                 ''Load the form
-                load_basic_form()
-                pnlFormHeader.Visible = True
+                Dim strForm As String = Request.QueryString("FORM").ToString.ToUpper.Trim
+                If strForm = "BSC" Then
+                    load_basic_form()
+                    pnlFormHeader.Visible = True
+                End If
             End If
         End If
     End Sub
@@ -27,6 +30,24 @@
 
         Return tblResults
     End Function
+
+    Private Sub loadOptionsDropDown()
+        Dim strSQL As String = "SELECT * FROM [T_FORMS].[dbo].[VW_FORM_DDL_OPTIONS] WHERE MC_FORMS_ID = " & Request.QueryString("id")
+        Dim tblResults As DataTable = g_IO_Execute_SQL(strSQL, False)
+        If tblResults.Rows.Count > 0 Then
+            ddlOptions.DataValueField = "FORM_DDL_OPTIONS_ID"
+            ddlOptions.DataTextField = "OPTION"
+            ddlOptions.DataSource = tblResults
+            ddlOptions.DataBind()
+
+            litDDLLabel.Text = tblResults.Rows(0)("FORM_DDL_LABEL") & " : "
+        Else
+            ''There was an error
+        End If
+
+
+
+    End Sub
 
     Private Sub loadBCCDropDown()
         Dim strSQL As String = ""
@@ -91,11 +112,12 @@
         If tblResults.Rows.Count > 0 Then
             ''" & tblResults.Rows(0)("HEADER_DISPLAY") & "
             litHeader.Text = "<h3 style=""text-decoration: underline;"">" & IIf(IsDBNull(tblResults.Rows(0)("HEADER")), "", tblResults.Rows(0)("HEADER")) & "</h3>"
-            litTO.Text = "<pre>" & tblResults.Rows(0)("TO_VALUE").ToString.Replace("<", "&lt;").Replace(">", "&gt;") & "</pre>"
-            litFrom.Text = "<pre>" & Session("USER_NAME") & "&nbsp;&lt;" & Session("USER_EMAIL") & "&gt;" & "</pre>"
-            litCC.Text = "<pre>" & IIf(IsDBNull(tblResults.Rows(0)("CC_VALUE")), "", tblResults.Rows(0)("CC_VALUE").ToString.Replace("<", "&lt;").Replace(">", "&gt;")) & "</pre>"
+            litTO.Text = tblResults.Rows(0)("TO_VALUE").ToString.Replace("<", "&lt;").Replace(">", "&gt;")
+            litFrom.Text = Session("USER_NAME") & "&nbsp;&lt;" & Session("USER_EMAIL") & "&gt;"
+            litCC.Text = IIf(IsDBNull(tblResults.Rows(0)("CC_VALUE")), "", tblResults.Rows(0)("CC_VALUE").ToString.Replace("<", "&lt;").Replace(">", "&gt;"))
             litSubject.Text = IIf(IsDBNull(tblResults.Rows(0)("SUBJECT")), "", tblResults.Rows(0)("SUBJECT").ToString.Replace("<", "&lt;").Replace(">", "&gt;"))
             litMessageBody.Text = Server.HtmlDecode(tblResults.Rows(0)("MESSAGE_BODY"))
+            loadOptionsDropDown()
         End If
 
     End Sub
@@ -108,10 +130,10 @@
         Dim CCEmail As String = litCC.Text.ToString.Replace("&lt;", "<").Replace("&gt;", ">") & ";" & txtCC.Text.ToString.Replace("&lt;", "<").Replace("&gt;", ">")
         Dim BCCEmail As String = txtBCC.Text
         Dim Subject As String = tblResults.Rows(0)("SUBJECT")
-        Dim Message As String = tblResults.Rows(0)("MESSAGE_BODY") & "<br /><br />Comments: " & txtComments.Text.ToString.Trim
+        Dim Message As String = tblResults.Rows(0)("MESSAGE_BODY") & "<br /><br />" & litDDLLabel.Text & ddlOptions.SelectedItem.ToString & "<br /><br /> Comments: " & txtComments.Text.ToString.Trim
 
         If g_portalEnvironment = "TEST" Then
-            g_SendEmail(ToAddress:="Brian Averitt <Brian.Averitt@Itgbrands.com>", FromAddress:=FromEmail, CC_Address:="", BCC_Address:="Dustin Hall <Dustin.Hall@Itgbrands.com>", Subject:=Subject, Message:=Message)
+            g_SendEmail(ToAddress:="Donna Brady <Donna.Brady@itgbrands.com>", FromAddress:=FromEmail, CC_Address:="Brian Averitt <Brian.Averitt@Itgbrands.com>", BCC_Address:="Dustin Hall <Dustin.Hall@Itgbrands.com>", Subject:=Subject, Message:=Message)
         Else
             g_SendEmail(toEmail, FromEmail, CCEmail, BCCEmail, Subject, Message)
         End If
@@ -199,5 +221,4 @@
         hidePanels()
         pnlFormHeader.Visible = True
     End Sub
-
 End Class

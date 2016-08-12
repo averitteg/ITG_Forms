@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmBasic
+Partial Public Class SAPFICorpTaxQuaterly
     
     '''<summary>
     '''litHeader control.

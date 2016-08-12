@@ -76,14 +76,19 @@ Module ModMain
     End Function
 
     Public Sub g_SendEmail(ByVal ToAddress As String, ByVal Subject As String, ByVal Message As String)
-        g_SendEmail(ToAddress, Subject, Message, "", "")
+        g_SendEmail(ToAddress:=ToAddress, Subject:=Subject, Message:=Message, FromAddress:="", BCC_Address:="", CC_Address:="")
     End Sub
 
-    Public Sub g_SendEmail(ByVal ToAddress As String, ByVal Subject As String, ByVal Message As String, CC_Address As String)
-        g_SendEmail(ToAddress, Subject, Message, CC_Address, "")
-    End Sub
+    'Public Sub g_SendEmail(ByVal ToAddress As String, ByVal Subject As String, ByVal Message As String, CC_Address As String)
+    '    g_SendEmail(ToAddress, Subject, Message, CC_Address, "", "")
+    'End Sub
 
-    Public Sub g_SendEmail(ByVal ToAddress As String, ByVal Subject As String, ByVal Message As String, ByVal CC_Address As String, ByVal BCC_Address As String)
+    'Public Sub g_SendEmail(ByVal ToAddress As String, ByVal Subject As String, ByVal Message As String, CC_Address As String, ByVal FromAddress As String)
+    '    g_SendEmail(ToAddress, Subject, Message, CC_Address, "", From)
+    'End Sub
+
+
+    Public Sub g_SendEmail(ByVal ToAddress As String, ByVal FromAddress As String, ByVal CC_Address As String, ByVal BCC_Address As String, ByVal Subject As String, ByVal Message As String)
         Debug.WriteLine("Email Module -- To: " & ToAddress & "  Subject: " & Subject & "   Message: " & Message)
         If ConfigurationManager.AppSettings("EmailEnabled") = True Then
             Dim Mail As New System.Net.Mail.MailMessage
@@ -94,15 +99,23 @@ Module ModMain
                 For Each strEmailAddress As String In Split(ToAddress, ";")
                     Mail.To.Add(strEmailAddress)
                 Next
+                ''Add CC
                 If CC_Address <> "" Then
                     Mail.CC.Add(CC_Address)
                 End If
 
+                ''Add BCC
                 If BCC_Address <> "" Then
                     Mail.Bcc.Add(BCC_Address)
                 End If
 
-                Mail.From = New System.Net.Mail.MailAddress(g_EmailFromAddress)
+                ''Add From (If blank, use default from web.config
+                If FromAddress = "" Then
+                    Mail.From = New System.Net.Mail.MailAddress(g_EmailFromAddress)
+                Else
+                    Mail.From = New System.Net.Mail.MailAddress(FromAddress)
+                End If
+
                 Mail.Body = Message
 
                 Dim strHTMLCheck As String = UCase(Message)

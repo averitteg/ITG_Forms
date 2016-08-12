@@ -78,9 +78,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ITG_FORMS.frmBasic._txtTo">
+<member name="F:ITG_FORMS.frmBasic._litTO">
 <summary>
-txtTo control.
+litTO control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -96,9 +96,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:ITG_FORMS.frmBasic._litCC">
+<summary>
+litCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:ITG_FORMS.frmBasic._txtCC">
 <summary>
 txtCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic._imgAddCC">
+<summary>
+imgAddCC control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -159,6 +177,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:ITG_FORMS.frmBasic._txtCCValue">
+<summary>
+txtCCValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic._txtBCCvalue">
+<summary>
+txtBCCvalue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:ITG_FORMS.frmBasic._pnlAddBCC">
 <summary>
 pnlAddBCC control.
@@ -168,18 +204,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ITG_FORMS.frmBasic._litBCCAdd">
+<member name="F:ITG_FORMS.frmBasic._lstGroupListing">
 <summary>
-litBCCAdd control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:ITG_FORMS.frmBasic._ddlUserListing">
-<summary>
-ddlUserListing control.
+lstGroupListing control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -196,6 +223,384 @@ To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:ITG_FORMS.frmBasic._btnAddBCC">
+<summary>
+btnAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._litHeader">
+<summary>
+litHeader control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._pnlFormHeader">
+<summary>
+pnlFormHeader control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._litTO">
+<summary>
+litTO control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._litFrom">
+<summary>
+litFrom control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._litCC">
+<summary>
+litCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._txtCC">
+<summary>
+txtCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._imgAddCC">
+<summary>
+imgAddCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._txtBCC">
+<summary>
+txtBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._imgAddBCC">
+<summary>
+imgAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._litSubject">
+<summary>
+litSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._litMessageBody">
+<summary>
+litMessageBody control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._txtComments">
+<summary>
+txtComments control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._litCblLabel">
+<summary>
+litCblLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._cblOptions">
+<summary>
+cblOptions control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._btnSubmit">
+<summary>
+btnSubmit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._txtCCValue">
+<summary>
+txtCCValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._txtBCCvalue">
+<summary>
+txtBCCvalue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._pnlAddBCC">
+<summary>
+pnlAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._lstGroupListing">
+<summary>
+lstGroupListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._lstUserListing">
+<summary>
+lstUserListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1cbl._btnAddBCC">
+<summary>
+btnAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._litHeader">
+<summary>
+litHeader control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._pnlFormHeader">
+<summary>
+pnlFormHeader control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._litTO">
+<summary>
+litTO control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._litFrom">
+<summary>
+litFrom control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._litCC">
+<summary>
+litCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._txtCC">
+<summary>
+txtCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._imgAddCC">
+<summary>
+imgAddCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._txtBCC">
+<summary>
+txtBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._imgAddBCC">
+<summary>
+imgAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._litSubject">
+<summary>
+litSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._litMessageBody">
+<summary>
+litMessageBody control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._txtComments">
+<summary>
+txtComments control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._litDDLLabel">
+<summary>
+litDDLLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._ddlOptions">
+<summary>
+ddlOptions control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._btnSubmit">
+<summary>
+btnSubmit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._txtCCValue">
+<summary>
+txtCCValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._txtBCCvalue">
+<summary>
+txtBCCvalue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._pnlAddBCC">
+<summary>
+pnlAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._lstGroupListing">
+<summary>
+lstGroupListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._lstUserListing">
+<summary>
+lstUserListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmBasic1ddl._btnAddBCC">
 <summary>
 btnAddBCC control.
 </summary>
@@ -235,6 +640,24 @@ To modify move field declaration from designer file to code-behind file.
  Returns the Asp log object.
  </summary>
 </member>
+<member name="F:ITG_FORMS.NewBasicForm._pnlForm">
+<summary>
+pnlForm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.NewBasicForm._ddlCategory">
+<summary>
+ddlCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:ITG_FORMS.NewBasicForm._txtFormName">
 <summary>
 txtFormName control.
@@ -253,9 +676,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ITG_FORMS.NewBasicForm._litFrom">
+<member name="F:ITG_FORMS.NewBasicForm._imgAddTo">
 <summary>
-litFrom control.
+imgAddTo control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -265,6 +688,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:ITG_FORMS.NewBasicForm._txtCC">
 <summary>
 txtCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.NewBasicForm._imgAddCC">
+<summary>
+imgAddCC control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -289,6 +721,33 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:ITG_FORMS.NewBasicForm._ddlOptionType">
+<summary>
+ddlOptionType control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.NewBasicForm._txtDropDownLabel">
+<summary>
+txtDropDownLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.NewBasicForm._txtDropDownOptions">
+<summary>
+txtDropDownOptions control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:ITG_FORMS.NewBasicForm._btnSave">
 <summary>
 btnSave control.
@@ -301,6 +760,42 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:ITG_FORMS.NewBasicForm._btnClear">
 <summary>
 btnClear control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.NewBasicForm._pnlAddBCC">
+<summary>
+pnlAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.NewBasicForm._lstGroupListing">
+<summary>
+lstGroupListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.NewBasicForm._lstUserListing">
+<summary>
+lstUserListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.NewBasicForm._btnAddBCC">
+<summary>
+btnAddBCC control.
 </summary>
 <remarks>
 Auto-generated field.

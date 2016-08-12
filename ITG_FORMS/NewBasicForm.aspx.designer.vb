@@ -14,6 +14,33 @@ Option Explicit On
 Partial Public Class NewBasicForm
     
     '''<summary>
+    '''litMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents litMessage As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''pnlForm control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlForm As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''ddlCategory control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlCategory As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
     '''txtFormName control.
     '''</summary>
     '''<remarks>
@@ -32,13 +59,13 @@ Partial Public Class NewBasicForm
     Protected WithEvents txtTo As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''litFrom control.
+    '''imgAddTo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents litFrom As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents imgAddTo As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
     '''txtCC control.
@@ -48,6 +75,15 @@ Partial Public Class NewBasicForm
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtCC As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''imgAddCC control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents imgAddCC As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
     '''txtSubject control.
@@ -68,6 +104,33 @@ Partial Public Class NewBasicForm
     Protected WithEvents ckeMessageContent As Global.CKEditor.NET.CKEditorControl
     
     '''<summary>
+    '''ddlOptionType control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlOptionType As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''txtDropDownLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDropDownLabel As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txtDropDownOptions control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDropDownOptions As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''btnSave control.
     '''</summary>
     '''<remarks>
@@ -84,4 +147,40 @@ Partial Public Class NewBasicForm
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnClear As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''pnlAddBCC control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlAddBCC As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''lstGroupListing control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lstGroupListing As Global.System.Web.UI.WebControls.ListBox
+    
+    '''<summary>
+    '''lstUserListing control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lstUserListing As Global.System.Web.UI.WebControls.ListBox
+    
+    '''<summary>
+    '''btnAddBCC control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAddBCC As Global.System.Web.UI.WebControls.Button
 End Class

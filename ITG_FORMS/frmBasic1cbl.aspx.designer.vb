@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmBasic
+Partial Public Class frmBasic1cbl
     
     '''<summary>
     '''litHeader control.
@@ -120,6 +120,24 @@ Partial Public Class frmBasic
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtComments As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''litCblLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents litCblLabel As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''cblOptions control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cblOptions As Global.System.Web.UI.WebControls.CheckBoxList
     
     '''<summary>
     '''btnSubmit control.
