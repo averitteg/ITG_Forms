@@ -319,6 +319,7 @@
             If IsDBNull(row("control_type")) Then
                 ''Encapsulate the control for formatting
                 Dim strEncap As String = "<span style="""
+                Dim strCloseSpan As String = "</span>"
                 ''Only Find the Label
                 strControlName = "LABEL_" & row("ordinal_position")
                 Dim curControl1 As Control = pnlFormDetails.FindControl(strControlName)
@@ -330,13 +331,16 @@
                             strEncap &= "font-weight: bold;"
                         ElseIf item.ToUpper = "UNDERLINE" Then
                             strEncap &= "text-decoration: underline;"
-                        ElseIf item.ToUpper = "sectionHead" Then
+                        ElseIf item.ToUpper = "SECTIONHEAD" Then
                             strEncap &= "font-size: 1.2em;"
+                        ElseIf item.ToUpper = "CENTER" Then
+                            strEncap = "<center>" & strEncap
+                            strCloseSpan = "</span></center>"
                         End If
                     Next
                 End If
                 strEncap &= """>"
-                Message &= strEncap & lblControl.Text & "</span>"
+                Message &= strEncap & lblControl.Text & strCloseSpan
             Else
                 ''Find the label and the control
                 ''Find the Label

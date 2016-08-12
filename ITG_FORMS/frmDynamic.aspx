@@ -16,6 +16,10 @@
         .SECTIONHEAD {
             font-size: 1.2em;
         }
+        .CENTER {
+            margin-left: auto;
+            margin-right: auto;
+        }
         .btnSubmit {
             display: inline-block;
             height: 40px;
