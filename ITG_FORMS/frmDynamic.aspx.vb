@@ -17,13 +17,15 @@
                 pnlFormHeader.Visible = True
             End If
         End If
-
         generateDynamicObjects()
+
+        pnlFormDetails.Visible = True
     End Sub
 
     Private Sub hidePanels()
         pnlAddBCC.Visible = False
         pnlFormHeader.Visible = False
+        pnlFormDetails.Visible = False
     End Sub
 
     Private Function getBasicFormDataFromDatabase()
@@ -209,6 +211,7 @@
         End If
 
         If options.IndexOf("MULTILINE") <> -1 Then
+            pnlFormDetails.Controls.Add(genLitBreak())
             TXT.TextMode = TextBoxMode.MultiLine
         End If
 
@@ -239,6 +242,7 @@
     End Function
 
     Private Function genLBL(ByVal ordinal As Integer, ByVal value As String, ByVal options As String)
+
         Dim LBL As New Label()
         LBL.ID = "LABEL_" & ordinal
         LBL.Text = value
@@ -246,15 +250,21 @@
         If options <> "" Then
             Dim delimiter As String = ""
             For Each x In options.Split(",")
-                LBL.CssClass &= delimiter & x.ToString
-                delimiter = " "
+                If x.ToUpper <> "DATE" Then
+                    LBL.CssClass &= delimiter & x.ToString
+                    If x.ToUpper = "TABLEBORDER" Then
+                        LBL.Text = LBL.Text.Replace("<table>", "<table class=""TABLE"">")
+                    End If
+                    delimiter = " "
+                End If
             Next
         End If
+
         Return LBL
     End Function
 
     Private Sub generateDynamicObjects()
-        Dim lbl As Label
+        ''Dim lbl As Label
 
         ''Get the form data
         Dim strSQL As String = "Select * from dbo.dynamic_form_control where mc_form_id = " & Request.QueryString("ID") & "  order by ordinal_position"
@@ -265,17 +275,24 @@
                 Dim labelOptions As String = row("label_options").ToString
                 pnlFormDetails.Controls.Add(genLBL(row("Ordinal_position"), row("label"), labelOptions))
 
+
             Else
-                lbl = New Label()
-                lbl.ID = "label_" & row("ordinal_position")
-                lbl.Text = row("label") & " : "
-                pnlFormDetails.Controls.Add(lbl)
+                ''lbl = New Label()
+                pnlFormDetails.Controls.Add(genLBL(row("Ordinal_position").ToString, row("label").ToString, row("label_options").ToString))
+                'lbl.ID = "label_" & row("ordinal_position")
+                'lbl.Text = row("label") & " : "
+                'pnlFormDetails.Controls.Add(lbl)
+
 
                 Dim dataType As String = row("control_type").ToString.ToUpper
-                If dataType = "TEXTBOX" Or dataType = "DATE" Then
-                    pnlFormDetails.Controls.Add(genTextBox(row("ordinal_position"), row("control_type"), row("label_options").ToString()))
+                If dataType = "TEXTBOX" Then
+                    Dim ordinalPosition As Integer = row("ordinal_position")
+                    pnlFormDetails.Controls.Add(genTextBox(ordinalPosition, dataType, row("label_options").ToString()))
+                ElseIf dataType = "TEXTBOXDATE" Then
+                    Dim ordinalPosition As Integer = row("ordinal_position")
+                    pnlFormDetails.Controls.Add(genTextBox(ordinalPosition, dataType, row("label_options").ToString()))
                 ElseIf dataType = "DROPDOWN" Then
-                    pnlFormDetails.Controls.Add(genDDL(25, row("ordinal_position"), row("control_type")))
+                    pnlFormDetails.Controls.Add(genDDL(Request.QueryString("ID"), row("ordinal_position"), row("control_type")))
                 ElseIf dataType = "LABEL" Then
                     pnlFormDetails.Controls.Add(genLBL(row("Ordinal_position"), row("label"), row("label_options")))
                 End If
@@ -284,6 +301,7 @@
             pnlFormDetails.Controls.Add(genLitBreak())
             pnlFormDetails.Controls.Add(genLitBreak())
         Next
+
 
     End Sub
 
@@ -347,7 +365,34 @@
                 strControlName = "LABEL_" & row("ordinal_position")
                 Dim curControl1 As Control = pnlFormDetails.FindControl(strControlName)
                 Dim lblControl As Label = curControl1
-                Message &= lblControl.Text
+                Dim lblText As String = ""
+                ''Encapsulate the control for formatting
+                Dim strEncap As String = "<span style="""
+                Dim strCloseSpan As String = "</span>"
+
+                If row("label_options").ToString <> "" Then
+                    strEncap = "<span style="""
+                    For Each item In row("label_options").ToString.Split(",")
+                        If item.ToUpper = "BOLD" Then
+                            strEncap &= "font-weight: bold;"
+                        ElseIf item.ToUpper = "UNDERLINE" Then
+                            strEncap &= "text-decoration: underline;"
+                        ElseIf item.ToUpper = "SECTIONHEAD" Then
+                            strEncap &= "font-size: 1.2em;"
+                        ElseIf item.ToUpper = "CENTER" Then
+                            strEncap = "<center>" & strEncap
+                            strCloseSpan = "</span></center>"
+                        End If
+                    Next
+                End If
+                strEncap &= """>"
+                If IsDBNull(row("control_type")) Then
+                    Message &= strEncap & lblControl.Text & strCloseSpan
+                Else
+                    Message &= strEncap & lblControl.Text & ": " & strCloseSpan
+                End If
+
+                'Message &= lblControl.Text
 
                 ''Find Control and handle types
                 strControlName = row("control_type") & "_" & row("ordinal_position")
@@ -368,9 +413,11 @@
 
             End If
             Message &= "<br /><br />"
+
         Next
 
-        lblMessage.Text = Message
+        Message = "<html><head><style  type=""text/css"">.TABLE th,.TABLE td{border:thin solid #000;padding:5px}.TABLE th{background-color:#bebebe}.pnl{padding:20px;width:90%;margin-bottom:20px}.MULTILINE{width:90%}.BOLD{font-weight:700}.UNDERLINE{text-decoration:underline}.SECTIONHEAD{font-size:1.2em}.CENTER{margin-left:auto;margin-right:auto}.btnSubmit{display:inline-block;height:40px;margin-left:20px;margin-right:20px;border:solid thin #909090;background-color:#F5F5F5;margin-bottom:20px;cursor:pointer}.btnSubmit:hover{background-color:#ffe0e0;border-color:#7e0000}.BLACK{color:#000}</style></head><body>" & Message & "</body></html>"
+        ''lblMessage.Text = Message
 
         If g_portalEnvironment = "TEST" Then
             g_SendEmail(ToAddress:="Brian Averitt <Brian.Averitt@Itgbrands.com>", FromAddress:=FromEmail, CC_Address:="", BCC_Address:="Dustin Hall <Dustin.Hall@Itgbrands.com>", Subject:=Subject, Message:=Message)
@@ -382,6 +429,9 @@
         g_IO_Execute_SQL(strSQL1, False)
 
         logUserSubmission()
+
+        hidePanels()
+        litHeader.Text = "Form successfully submitted."
 
     End Sub
 

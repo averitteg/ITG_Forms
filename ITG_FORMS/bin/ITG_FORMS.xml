@@ -726,24 +726,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ITG_FORMS.frmDynamic._txtCCValue">
-<summary>
-txtCCValue control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:ITG_FORMS.frmDynamic._txtBCCvalue">
-<summary>
-txtBCCvalue control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:ITG_FORMS.frmDynamic._pnlAddBCC">
 <summary>
 pnlAddBCC control.
@@ -1099,9 +1081,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._txtComments">
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._TextBox1">
 <summary>
-txtComments control.
+TextBox1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1165,6 +1147,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._btnAddBCC">
 <summary>
 btnAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.testDatePicker._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.testDatePicker._TextBox1">
+<summary>
+TextBox1 control.
 </summary>
 <remarks>
 Auto-generated field.

@@ -21,7 +21,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
-
+    <asp:Literal ID="litMessage" runat="server"></asp:Literal>
     <asp:Panel ID="pnlForm" runat="server">
         <table style="width: 70%;">
             <tr><td style="width: 80px;"><span style="font-weight: bold;">Category:</span></td><td><asp:DropDownList ID="ddlCategory" runat="server"></asp:DropDownList> </td></tr>

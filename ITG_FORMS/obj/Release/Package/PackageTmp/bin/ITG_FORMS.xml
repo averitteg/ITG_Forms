@@ -609,6 +609,168 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:ITG_FORMS.frmDynamic._litHeader">
+<summary>
+litHeader control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._pnlFormHeader">
+<summary>
+pnlFormHeader control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._litTO">
+<summary>
+litTO control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._litFrom">
+<summary>
+litFrom control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._litCC">
+<summary>
+litCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._txtCC">
+<summary>
+txtCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._imgAddCC">
+<summary>
+imgAddCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._txtBCC">
+<summary>
+txtBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._imgAddBCC">
+<summary>
+imgAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._litSubject">
+<summary>
+litSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._pnlFormDetails">
+<summary>
+pnlFormDetails control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._btnSubmit">
+<summary>
+btnSubmit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._btnCancel">
+<summary>
+btnCancel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._pnlAddBCC">
+<summary>
+pnlAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._lstGroupListing">
+<summary>
+lstGroupListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._lstUserListing">
+<summary>
+lstUserListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._btnAddBCC">
+<summary>
+btnAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.frmDynamic._lblMessage">
+<summary>
+lblMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="T:ITG_FORMS.My.MyWebExtension">
  <summary>
  Module used to define the properties that are available in the My Namespace for Web projects.
@@ -639,6 +801,15 @@ To modify move field declaration from designer file to code-behind file.
  <summary>
  Returns the Asp log object.
  </summary>
+</member>
+<member name="F:ITG_FORMS.NewBasicForm._litMessage">
+<summary>
+litMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member>
 <member name="F:ITG_FORMS.NewBasicForm._pnlForm">
 <summary>
@@ -805,6 +976,231 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:ITG_FORMS.Reports._litReportListing">
 <summary>
 litReportListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._litHeader">
+<summary>
+litHeader control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._pnlFormHeader">
+<summary>
+pnlFormHeader control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._litTO">
+<summary>
+litTO control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._litFrom">
+<summary>
+litFrom control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._litCC">
+<summary>
+litCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._txtCC">
+<summary>
+txtCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._imgAddCC">
+<summary>
+imgAddCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._txtBCC">
+<summary>
+txtBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._imgAddBCC">
+<summary>
+imgAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._litSubject">
+<summary>
+litSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._litMessageBody">
+<summary>
+litMessageBody control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._TextBox1">
+<summary>
+TextBox1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._btnSubmit">
+<summary>
+btnSubmit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._txtCCValue">
+<summary>
+txtCCValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._txtBCCvalue">
+<summary>
+txtBCCvalue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._pnlAddBCC">
+<summary>
+pnlAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._lstGroupListing">
+<summary>
+lstGroupListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._lstUserListing">
+<summary>
+lstUserListing control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.SAPFICorpTaxQuaterly._btnAddBCC">
+<summary>
+btnAddBCC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.testDatePicker._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.testDatePicker._TextBox1">
+<summary>
+TextBox1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.testDynamicForm._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.testDynamicForm._pnlFormDetails">
+<summary>
+pnlFormDetails control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.testDynamicForm._btnSubmit">
+<summary>
+btnSubmit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ITG_FORMS.testDynamicForm._lblMessage">
+<summary>
+lblMessage control.
 </summary>
 <remarks>
 Auto-generated field.

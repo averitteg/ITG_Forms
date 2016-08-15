@@ -1,11 +1,20 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Default.Master" CodeBehind="frmDynamic.aspx.vb" Inherits="ITG_FORMS.frmDynamic" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-
     <style>
+        .TABLE th, .TABLE td{
+            border: thin solid black;
+            padding: 5px;
+        }
+        .TABLE th{
+            background-color: #bebebe;
+        }
         .pnl {
             padding: 20px;
             width: 90%;
             margin-bottom: 20px;
+        }
+        .MULTILINE {
+            width: 90%;
         }
         .BOLD {
             font-weight: bold;
@@ -32,14 +41,19 @@
         }
         .btnSubmit:hover {
             background-color: #ffe0e0;
+            border-color: #7e0000;
         }
+        .BLACK {
+            color: black;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
     <asp:Literal ID="litHeader" runat="server"></asp:Literal>
         <hr />
 
-        <asp:Panel ID="pnlFormHeader" runat="server">
+        <asp:Panel ID="pnlFormHeader" runat="server" CssClass="BLACK">
             <table style="width: 100%;">
                 <tr><td style="width: 80px;"><span style="font-weight: bold;">To:</span></td><td><asp:Literal ID="litTO" runat="server"></asp:Literal></td></tr>
                 <tr><td><span style="font-weight: bold;"> From:</span></td><td><asp:Literal ID="litFrom" runat="server"></asp:Literal> </td></tr>
@@ -56,12 +70,6 @@
                 <tr><td>
                     <asp:Button ID="btnSubmit" CssClass="btnSubmit" runat="server" Text="Submit Request" />
                     <asp:Button ID="btnCancel" CssClass="btnSubmit" runat="server" Text="Cancel" />
-                    <div style="display: block;height: 1px; width: 1px; border:none; overflow: hidden;">
-                        <div>
-                            <asp:TextBox ID="txtCCValue" runat="server"></asp:TextBox>
-                            <asp:TextBox ID="txtBCCvalue" runat="server"></asp:TextBox>
-                        </div>
-                    </div>
                     </td></tr>
             </table>
         </asp:Panel>
@@ -80,12 +88,20 @@
 
 
         
-        
+        <script>
+            $(document).ready(function () {
+                $(".DATE").datepicker({
+                    showOn: "button",
+                    buttonImage: "images/calendar.gif",
+                    buttonImageOnly: true,
+                    buttonText: "Select date",
+                    dateFormat: 'yy/mm/dd',
+                    showAnim: 'fadeIn'
+                });
+                $('.TIME').timepicker({ 'timeFormat': 'H:i','step':15 });
+            });
+      </script>
 
         <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
-    <script>
-        $( document ).ready(function() {
-            $( ".DATE" ).datepicker();
-        });
-    </script>
+    
 </asp:Content>

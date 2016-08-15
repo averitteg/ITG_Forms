@@ -131,24 +131,6 @@ Partial Public Class frmDynamic
     Protected WithEvents btnCancel As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''txtCCValue control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtCCValue As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''txtBCCvalue control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtBCCvalue As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
     '''pnlAddBCC control.
     '''</summary>
     '''<remarks>

@@ -60,6 +60,7 @@
 
         <asp:Panel ID="pnlFormHeader" runat="server">
             <table style="width: 100%;">
+
                 
                 <tr><td style="width: 80px;"><span style="font-weight: bold;">To:</span></td><td><asp:Literal ID="litTO" runat="server"></asp:Literal></td></tr>
                 <tr><td><span style="font-weight: bold;"> From:</span></td><td><asp:Literal ID="litFrom" runat="server"></asp:Literal> </td></tr>
@@ -72,7 +73,7 @@
             <asp:Literal ID="litMessageBody" runat="server"></asp:Literal>
             <br />
             <br />
-            <asp:TextBox ID="txtComments" runat="server" TextMode="MultiLine" Height="50px" Width="80%"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" CssClass="DATE" runat="server" Height="50px" Width="80%"></asp:TextBox>
             <br />
             <br />
             <table>
@@ -99,4 +100,13 @@
             <br /><br />
             <asp:Button ID="btnAddBCC" runat="server" Text="Add BCC" />
         </asp:Panel>
+    <script>
+            $(document).ready(function () {
+                $(".DATE").datepicker({
+                    showOtherMonths: true,
+                    selectOtherMonths: true,
+                    dateFormat: 'dd/mm/yy'
+                });
+            });
+      </script>
 </asp:Content>

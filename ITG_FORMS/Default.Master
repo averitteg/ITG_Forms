@@ -10,22 +10,30 @@
     <meta name="description" content="ITG Brands - Forms Portal">
     <meta name="author" content="Averitt, Brian K (MLMX22)">
     <title>ITG BRANDS - FORMS PORTAL</title>
-    <%--<script src="Scripts/jquery-1.8.2.min.js"></script>--%>
+    
     <script src="Scripts/jQuery-2.2.4.js"></script>
-<%--    <script src="Scripts/jquery.min.js"></script>--%>
     <script src="Scripts/jquery-ui-1.8.24.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/common.js"></script>
-    <script src="Content/jquery.treeview.js"></script>
-    <link href="Content/jquery-ui.min.css" rel="stylesheet" />
-    <link href="Content/jquery-ui.structure.min.css" rel="stylesheet" />
-    <link href="Content/jquery-ui.theme.min.css" rel="stylesheet" />
-    <link href="Content/jquery.treeview.css" rel="stylesheet" />
+    <script src="Scripts/jquery.timepicker.min.js"></script>
+    <link href="Scripts/jquery-ui.theme.min.css" rel="stylesheet" />
+    <link href="Scripts/jquery-ui.structure.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/Dashboard.css" rel="stylesheet" />
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="Scripts/font-awesome.min.css" />
+    <link href="Scripts/font-awesome.min.css" rel="stylesheet" />
+    <link href="Scripts/jquery.timepicker.css" rel="stylesheet" />
+    <script>jQuery.browser = {};
+        (function () {
+            jQuery.browser.msie = false;
+            jQuery.browser.version = 0;
+            if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+                jQuery.browser.msie = true;
+                jQuery.browser.version = RegExp.$1;
+            }
+        })();
+    </script>
+
     <style>
         .portalLink {
             float: left;
@@ -121,7 +129,6 @@
             <asp:Literal ID="litMenu" runat="server"></asp:Literal>
               </div>
             <!-- <li><a href="#">Help</a></li> -->
-          </ul>
         </div>
       </div>
     </nav>
